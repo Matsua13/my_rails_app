@@ -1,0 +1,21 @@
+<h1>Add a task</h1>
+
+<%= form_with model: @task, url: tasks_path, method: :post do |f| %>
+  <div>
+    <%= f.label :title, "What do you have to do?" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :deadline, "Deadline" %>
+    <%= f.datetime_local_field :deadline, required: true %>
+  </div>
+
+  <br>
+
+  <%= f.submit "Add", class: "btn btn-success" %>
+<% end %>
+
+<br>
+
+<%= link_to "Back to the TDL", tasks_path, class: "btn btn-secondary" %>

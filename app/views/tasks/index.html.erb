@@ -1,0 +1,30 @@
+<h1>To Do List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Deadline</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.deadline.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= task.completed ? "✔️ Done" : "⏳ Still not, bitch?" %></td>
+        <td>
+          <% unless task.completed %>
+            <%= link_to "Mark as completed", complete_task_path(task), method: :patch, class: "btn btn-success" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Add a task", new_task_path, class: "btn btn-primary" %>
