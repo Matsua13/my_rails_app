@@ -1,0 +1,35 @@
+/* Retro Fighting Game Style */
+table {
+  width: 100%; /* Occupe 100% de la largeur du container */
+  border: 2px solid #00ff00; /* Neon green border */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 5px 10px; /* Moins de padding pour réduire la taille */
+  text-align: center;
+  font-size: 0.8em; /* Réduit la taille de la police */
+}
+
+th {
+  background-color: #ff3333; /* Bright red header */
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #333333; /* Dark background for even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: #444444; /* Lighter dark background for odd rows */
+}
+
+tr:hover {
+  background-color: #f1c40f; /* Neon yellow on hover */
+}
+
+td {
+  color: #f1f1f1;
+}

@@ -1,0 +1,29 @@
+/* Button Styles */
+.btn {
+  font-family: 'Press Start 2P', cursive;
+  padding: 5px 15px; /* Réduit la taille des boutons */
+  margin: 3px;
+  border: 2px solid #ff3333; /* Red border for action */
+  color: #ff3333;
+  background-color: #212121;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 0.8em; /* Réduit la taille de la police des boutons */
+}
+
+.btn:hover {
+  background-color: #ff3333;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-warning {
+  background-color: #ff8000;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #00ff00;
+}

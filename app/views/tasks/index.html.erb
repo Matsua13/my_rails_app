@@ -1,4 +1,10 @@
+<div class="container">
+
 <h1>To Do List</h1>
+
+<%= link_to "All tasks", tasks_path %> |
+<%= link_to "Upcoming", tasks_path(status: "upcoming") %> |
+<%= link_to "Completed", tasks_path(status: "completed") %>
 
 <table>
   <thead>
@@ -14,11 +20,14 @@
       <tr>
         <td><%= task.title %></td>
         <td><%= task.deadline.strftime("%d/%m/%Y %H:%M") %></td>
-        <td><%= task.completed ? "✔️ Done" : "⏳ Still not, bitch?" %></td>
         <td>
-          <% unless task.completed %>
-            <%= link_to "Mark as completed", complete_task_path(task), method: :patch, class: "btn btn-success" %>
+          <%= task.completed ? "✅ Done" : "⏳ Still not, bitch?" %>
+          <% if task.deadline <= Time.now + 1.day && !task.notified && !task.completed %>
+            <span class="notification-warning">⚠️ Close deadline!</span>
           <% end %>
+        </td>
+        <td>
+          <%= link_to "Update", edit_task_path(task), class: "btn btn-warning" %>
         </td>
       </tr>
     <% end %>
@@ -28,3 +37,4 @@
 <br>
 
 <%= link_to "Add a task", new_task_path, class: "btn btn-primary" %>
+</div>

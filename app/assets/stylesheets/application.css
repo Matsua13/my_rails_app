@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Import custom CSS files */
+@import "game-style";
+@import "task-table";
+@import "buttons";
+
+/* Global Style */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #212121; /* Dark gray background */
+  color: #f1f1f1; /* Light gray text for readability */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center; /* Center text */
+  overflow: hidden;
+}
+
+a {
+  color: #9b59b6; /* Change the link color */
+  text-decoration: none; /* Remove the underline */
+}
+
+.container {
+  width: 30%; /* Réduit la largeur à 50% */
+  max-width: 600px; /* Limite la largeur maximale */
+  padding: 10px;
+  background-color: #333333; /* Background légèrement plus clair pour contraster */
+  border-radius: 10px; /* Bords arrondis pour un effet arcade */
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.8); /* Ombre néon rouge autour */
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #ff3333; /* Bright red for title */
+  text-shadow: 3px 3px 5px rgba(255, 0, 0, 0.8); /* Neon effect */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Notification Styles */
+.notification-warning {
+  color: orange;
+  font-weight: bold;
+  margin-left: 5px; /* Réduit la marge */
+}

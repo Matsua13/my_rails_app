@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:close_deadline] %>
+  <div class="alert alert-warning">
+    <%= flash[:close_deadline] %>
+  </div>
+<% end %>
+
+<h1><%= @task.title %></h1>
+<p><%= @task.description %></p>
+<p>Status: <%= @task.completed? ? "Completed" : "Pending" %></p>
+
+<%= link_to "Mark as Completed", complete_task_path(@task), method: :patch, class: "btn btn-success", data: { turbo: false, confirm: "Are you sure?" } %>
+
+<%= link_to "Back to Tasks", tasks_path, class: "btn btn-secondary" %>
